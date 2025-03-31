@@ -35,7 +35,7 @@ function App() {
     <>
       <h2 class="mb-4">Crea un nuovo post</h2>
       <form onSubmit={handleSubmit}>
-          <div class="mb-3">
+          <div className="mb-3">
               <label htmlFor="author" className="form-label">Autore</label>
               <input
               type="text"
@@ -50,7 +50,7 @@ function App() {
               />
           </div>
           
-          <div class="mb-3">
+          <div className="mb-3">
               <label htmlFor="title" className="form-label">Titolo</label>
               <input
               type="text"
@@ -63,7 +63,7 @@ function App() {
               />
           </div>
           
-          <div class="mb-3">
+          <div className="mb-3">
               <label htmlFor="body" className="form-label">Corpo del Post</label>
               <textarea
               className="form-control"
@@ -75,7 +75,7 @@ function App() {
               onChange={handleChange}></textarea>
           </div>
           
-          <div class="form-check form-switch mb-3">
+          <div className="form-check mb-3">
               <input
               className="form-check-input"
               type="checkbox"
