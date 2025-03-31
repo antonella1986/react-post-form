@@ -5,6 +5,7 @@ function App() {
   //inizializzo la funzione per gestire l'invio del form e il fetch
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert("Nuovo post inviato con successo!");
     console.log("Dati inseriti:", formData);
 
     fetch("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", {
