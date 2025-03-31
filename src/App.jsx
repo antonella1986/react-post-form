@@ -10,7 +10,7 @@ function App() {
 
     fetch("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", {
       //specifico che sto inviando dati. senza specificarlo, la richiesta predefinita è GET
-      method: POST,
+      method: "POST",
       //specifico che i dati che sto inviando sono in formato JSON, così il server sa come interpretarli
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
     <div className="container">
-      <h2 class="mb-4">Crea un nuovo post</h2>
+      <h2 className="mb-4">Crea un nuovo post</h2>
       <form onSubmit={handleSubmit}>
           <div className="mb-3">
               <label htmlFor="author" className="form-label">Autore</label>
@@ -111,7 +111,7 @@ function App() {
               <label className="form-check-label" htmlFor="public">Pubblico</label>
           </div>
           
-          <button type="submit" class="btn btn-primary">Pubblica</button>
+          <button type="submit" className="btn btn-primary">Pubblica</button>
       </form>
     </div> 
     </>
