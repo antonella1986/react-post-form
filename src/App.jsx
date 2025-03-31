@@ -2,20 +2,26 @@ import { useState } from 'react'
 
 function App() {
 
-  fetch("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", {
-    method: POST,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
+  //inizializzo la funzione per gestire l'invio del form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Dati inseriti:", formData);
+    
+    fetch("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", {
+      method: POST,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     })
-    .catch(error => {
-      console.log("error")
-    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => {
+        console.log("error")
+      })
+  };
 
   //impost lo stato di partenza del form inizializzandolo con i valori vuoti nei vari campi
   const [formData, setFormData] = useState({
@@ -39,11 +45,6 @@ function App() {
     });
   };
 
-  //inizializzo la funzione per gestire l'invio del form
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Dati inseriti:", formData);
-  };
 
 
   return (
