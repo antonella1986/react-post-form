@@ -1,2 +1,24 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #262525;
+  color: lightgrey;
+}
+
+.container {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  margin-top: 2rem;
+}

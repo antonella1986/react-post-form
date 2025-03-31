@@ -2,19 +2,24 @@ import { useState } from 'react'
 
 function App() {
 
-  //inizializzo la funzione per gestire l'invio del form
+  //inizializzo la funzione per gestire l'invio del form e il fetch
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Dati inseriti:", formData);
-    
+
     fetch("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", {
+      //specifico che sto inviando dati. senza specificarlo, la richiesta predefinita è GET
       method: POST,
+      //specifico che i dati che sto inviando sono in formato JSON, così il server sa come interpretarli
       headers: {
         "Content-Type": "application/json",
       },
+      //converto i dati del form (formData) in formato JSON per l'invio
       body: JSON.stringify(formData),
     })
+      //attendo la risposta, e se non ci sono errori la converto in JSON
       .then(res => res.json())
+      //ora che ho accesso ai dati, posso stamparli in console
       .then(data => {
         console.log(data)
       })
@@ -49,6 +54,7 @@ function App() {
 
   return (
     <>
+    <div className="container">
       <h2 class="mb-4">Crea un nuovo post</h2>
       <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -80,7 +86,7 @@ function App() {
           </div>
           
           <div className="mb-3">
-              <label htmlFor="body" className="form-label">Corpo del Post</label>
+              <label htmlFor="body" className="form-label">Corpo del post</label>
               <textarea
               className="form-control"
               id="body"
@@ -106,7 +112,7 @@ function App() {
           
           <button type="submit" class="btn btn-primary">Pubblica</button>
       </form>
-      
+    </div> 
     </>
   )
 }
